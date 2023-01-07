@@ -14,12 +14,10 @@ import Numpy from "./components/Numpy";
 import Admin from "./components/Admin";
 import AdminRoute from "./components/AdminRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
-import './App.css';
-import 'react-toastify/dist/ReactToastify.css';
-
+import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -27,53 +25,51 @@ function App() {
   };
 
   return (
-    <>    <ToastContainer />
-          <UserAuthContextProvider>
-            <NavBar toggle={toggle}/>
-            <SideBar isOpen={isOpen} toggle={toggle}/>
-            <Routes>
-              <Route
-                path="/python"
-                element={
-                  <ProtectedRoute>
-                    <Python />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/mathplotlib"
-                element={
-                  <ProtectedRoute>
-                    <Mathplotlib/>
-                  </ProtectedRoute>
-                }
-                
-              />
-              <Route
-                path="/numpy"
-                element={
-                  <ProtectedRoute>
-                    <Numpy/>
-                  </ProtectedRoute>
-                }
-                
-              />
-              <Route
-                path="/admin"
-                element={
-                  <AdminRoute>
-                    <Admin/>
-                  </AdminRoute>
-                }
-                
-              />
-              <Route path="/" element={<Hero />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-            </Routes>
-            
-          </UserAuthContextProvider>
-          <Footer/>
+    <>
+      {" "}
+      <ToastContainer />
+      <UserAuthContextProvider>
+        <NavBar toggle={toggle} />
+        <SideBar isOpen={isOpen} toggle={toggle} />
+        <Routes>
+          <Route
+            path="/python"
+            element={
+              <ProtectedRoute>
+                <Python />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/mathplotlib"
+            element={
+              <ProtectedRoute>
+                <Mathplotlib />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/numpy"
+            element={
+              <ProtectedRoute>
+                <Numpy />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <AdminRoute>
+                <Admin />
+              </AdminRoute>
+            }
+          />
+          <Route path="/" element={<Hero />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </UserAuthContextProvider>
+      <Footer />
     </>
   );
 }

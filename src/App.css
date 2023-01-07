@@ -14,7 +14,7 @@
   margin-top: 100px;
 }
 
-.center{
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,8 +27,8 @@
   font-size: 15px !important;
 }
 
-.g-btn>div,
-.g-btn>div>svg {
+.g-btn > div,
+.g-btn > div > svg {
   width: 40px !important;
   height: 38px !important;
 }
